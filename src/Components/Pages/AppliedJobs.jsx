@@ -4,6 +4,7 @@ import MyJob from "../../../src/myjobs.json";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+import MyDocument from './MyDocument';
 
 
 const AppliedJobs = () => {
@@ -78,12 +79,18 @@ const AppliedJobs = () => {
                                         {jb.category}
                                         <br/>
                                     </td>
-                                    <td className="hidden md:flex flex-row gap-16 ">
+                                    <td className="hidden md:flex flex-row gap-16 items-end ">
                                         <h2>{jb.range}</h2>
-                                        {/* <h2>{jb.postdate}</h2> */}
                                         <h2>{jb.deadline}</h2>
                                     </td>
-                                    <th><button className='btn basic-btn'>Download Summary</button></th>
+                                            {/* --------DOWNLOAD BTN ------ */}
+                                    <th>
+                                        <PDFDownloadLink document={<MyDocument />}       fileName="Application_Summary.pdf" className='btn basic-btn btn-sm'>
+                                            {({ blob, url, loading, error }) =>
+                                                loading ? 'Loading document...' : 'Download Summary'
+                                            }
+                                        </PDFDownloadLink>
+                                    </th>
                                 </tr> )
                             }
                         </tbody>
@@ -94,6 +101,17 @@ const AppliedJobs = () => {
                     <Lottie className='w-full mx-auto' animationData={MyJob} />
             </div>
         </div>
+        {/* --------PDF------- */}
+        {/* <div>
+            <PDFViewer>
+                <MyDocument />
+            </PDFViewer>
+            <PDFDownloadLink document={<MyDocument />} fileName="example.pdf">
+                {({ blob, url, loading, error }) =>
+                            loading ? 'Loading document...' : 'Download Summary'
+                        }
+            </PDFDownloadLink>
+        </div> */}
     </div>
     );
 };

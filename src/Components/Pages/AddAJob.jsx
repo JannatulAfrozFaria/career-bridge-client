@@ -29,10 +29,10 @@ const AddAJob = () => {
         const postdate = form.postdate.value;
         const range = form.range.value;
         const deadline = form.deadline.value;
-        const number = form.number.value;
+        // const number = form.number.value;
         const username = form.username.value;
         const email = user.email;
-        const newJob = {photo, job, description,category,postdate,range,deadline,number,username,email}
+        const newJob = {photo, job, description,category,postdate,range,deadline,username,email}
         console.log(newJob);
 
         //send data to the server 
@@ -135,7 +135,7 @@ const AddAJob = () => {
                                                     <span className="label-text">Application Deadline</span>
                                                 </label>
                                                 {/* <Calendar onChange={(value)=>setSelectedDate(value)} ></Calendar> */}
-                                                <DatePicker className='input input-bordered text-gray-400' name='deadline' required selected={startDate} onChange={(date) => setStartDate(date)} dateFormat ="dd/MM/yyyy" minDate={new Date()} showYearDropdown scrollableMonthYearDropdown/>
+                                                <DatePicker className='input input-bordered text-gray-400' name='deadline' required selected={startDate} onChange={(date) => setStartDate(date)} dateFormat ="yyyy/MM/dd"  showYearDropdown scrollableMonthYearDropdown/>
                                                 {/* <input type="text" placeholder="Job Posting Date"
                                                 name="deadline" className="input input-bordered" required /> */}
                                             </div>
