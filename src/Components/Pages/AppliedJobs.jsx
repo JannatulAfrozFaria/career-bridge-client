@@ -3,6 +3,9 @@ import Lottie from "lottie-react";
 import MyJob from "../../../src/myjobs.json";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+
+
 const AppliedJobs = () => {
     //Dynamic Title
     useEffect(()=>{
