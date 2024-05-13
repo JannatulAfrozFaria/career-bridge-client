@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const JobDetails = () => {
     //Dynamic Title
@@ -19,7 +20,29 @@ const JobDetails = () => {
         const username = user.displayName;
         const appliedJob = { username,email, resume}
         console.log(appliedJob);
+
+         //send data to server
+        fetch('http://localhost:5000/appliedJobs',{
+            method: 'POST',
+            headers: {
+                'content-type': 'applications/json'
+            },
+            body: JSON.stringify(appliedJob)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+               Swal.fire({
+                    title: 'Success',
+                    text: 'Applied in this Job Successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
     }
+   
     const singleJob = useLoaderData();
     const {photo, job, category, postdate, description,range,number} = singleJob;
     return (
@@ -55,20 +78,20 @@ const JobDetails = () => {
             <button  onClick={()=>document.getElementById('my_modal_1').showModal()} data-aos="fade-left" data-aos-duration="3000" className='btn basic-btn mt-6 w-3/5'>Apply</button>
             <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
-                 <form  onSubmit={handleSubmit} action="" method="dialog">
+                 <form  onSubmit={handleSubmit}>
                     {/* USER ----NAME */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">User Name</span>
                         </label>
-                        <input type="text" placeholder="User Name" name="username" className="input input-bordered" required defaultValue={user.displayName} />
+                        <input   type="text" placeholder="User Name" name="username" className="input input-bordered text-gray-400" required defaultValue={user.displayName} />
                     </div>
                     {/* USER-----EMAIL */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" name="email" className="input input-bordered" required defaultValue={user.email} />
+                        <input  type="email" placeholder="email" name="email" className="input input-bordered text-gray-400" required defaultValue={user.email} />
                     </div>
                     {/* RESUME-----LINK */}
                     <div className="form-control">
@@ -80,9 +103,9 @@ const JobDetails = () => {
                     <input type="submit" value="Submit Application" className="btn basic-btn w-full my-5"/>
                  </form>
                 {/* Close-------BUtton */}
-                <div className="modal-action">
+                <div className="">
                     <form method="dialog">
-                        <button className="btn btn-error w-full">Close</button>
+                        <button className="btn btn-primary w-full">Close</button>
                     </form>
                 </div>
             </div>

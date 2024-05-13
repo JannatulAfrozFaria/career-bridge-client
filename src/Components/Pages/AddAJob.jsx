@@ -15,6 +15,9 @@ const AddAJob = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     // const [selectedDate,setSelectedDate] = useState(new Date());
+
+    const [applicant,setApplicant] = useState(0);
+
     const {user} = useContext(AuthContext);
     const handleAdd = (event) =>{
         event.preventDefault();
@@ -108,7 +111,7 @@ const AddAJob = () => {
                                                     <span className="label-text">User Name</span>
                                                 </label>
                                                 <input type="text" placeholder="User Name"
-                                                name="username" className="input input-bordered" required />
+                                                name="username" className="input input-bordered" required defaultValue={user.displayName} />
                                             </div>
                                             {/* USER-----EMAIL */}
                                             <div className="form-control">
@@ -116,7 +119,7 @@ const AddAJob = () => {
                                                     <span className="label-text">Email</span>
                                                 </label>
                                                 <input type="email" placeholder="email"
-                                                name="email" className="input input-bordered" required />
+                                                name="email" className="input input-bordered" required defaultValue={user.email}/>
                                             </div>
                                             {/* POSTING DATE----------- */}
                                             <div className="form-control">
@@ -143,8 +146,9 @@ const AddAJob = () => {
                                                 <label className="label">
                                                     <span className="label-text">Job Applicant's Number</span>
                                                 </label>
-                                                <input type="text" placeholder="Job Applicant's Number"
-                                                name="number" className="input input-bordered" required />
+                                                <span className='badge bg-sky-300 p-6 text-white font-bold' > {applicant} </span>
+                                                {/* <input type="text" placeholder="Job Applicant's Number"
+                                                name="number" className="input input-bordered" required /> */}
                                             </div>
                                             </div>
                                         </div>
