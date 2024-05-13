@@ -5,10 +5,10 @@ import newJob from '../../assets/newjob2.png'
 
 const ConnectSection = () => {
     return (
-       <div className='my-24'>
-            <h2 data-aos="fade-right" data-aos-duration="2000"  className="text-4xl font-bold text-sky-500 text-center w-5/6 mx-auto mb-8">Our Procedure of Establishing Connectivity</h2>
-            <p data-aos="fade-left" data-aos-duration="3000" className='sm:text-base lg:text-lg mt-3  w-full lg:w-4/5 text-gray-400 text-center mx-auto mb-8 md:mb-12'> From initial engagement to interview scheduling, we prioritize seamless communication and efficient interactions. Through our user-friendly platform, we facilitate networking opportunities, ensuring candidates and employers can connect effortlessly. Whether it's submitting applications or arranging interviews, our streamlined approach ensures a smooth and effective recruitment experience for all parties involved. We outline our streamlined process for connecting job seekers with employers, ensuring efficient communication and seamless interactions throughout the hiring journey.</p>
-            <div data-aos="fade-up" data-aos-duration="3000" className='flex flex-col md:flex-row gap-6 w-4/5 mx-auto h-full'>
+       <div className='my-24 w-5/6 mx-auto'>
+            <h2 data-aos="fade-right" data-aos-duration="2000"  className="text-4xl font-bold text-sky-500 text-center w-full mx-auto mb-8">Our Procedure of Establishing Connectivity</h2>
+            <p data-aos="fade-left" data-aos-duration="3000" className='sm:text-base lg:text-lg mt-3  w-full text-gray-400 text-center mx-auto mb-8 md:mb-12'> From initial engagement to interview scheduling, we prioritize seamless communication and efficient interactions. Through our user-friendly platform, we facilitate networking opportunities, ensuring candidates and employers can connect effortlessly. Whether it's submitting applications or arranging interviews, our streamlined approach ensures a smooth and effective recruitment experience for all parties involved. We outline our streamlined process for connecting job seekers with employers, ensuring efficient communication and seamless interactions throughout the hiring journey.</p>
+            <div data-aos="fade-up" data-aos-duration="3000" className='flex flex-col md:flex-row gap-6 w-full h-full'>
                 {/* CARD--------1 */}
                 <div className="card1 bg-white shadow-xl rounded-3xl p-6 md:p-12">
                         <div className='w-1/2 mb-6'>

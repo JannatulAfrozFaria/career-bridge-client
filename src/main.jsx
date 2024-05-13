@@ -20,6 +20,8 @@ import AllJobs from './Components/Pages/AllJobs.jsx';
 import AddAJob from './Components/Pages/AddAJob.jsx';
 import AppliedJobs from './Components/Pages/AppliedJobs.jsx';
 import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
+import JobDetails from './Components/Pages/JobDetails.jsx';
+import UpdateJob from './Components/Pages/UpdateJob.jsx';
 // ..
 AOS.init();
 const router = createBrowserRouter([
@@ -37,18 +39,25 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: 'allJobs',
+        path: '/allJobs',
         element: <AllJobs></AllJobs>,
         loader: () =>fetch('http://localhost:5000/job')
       },
       {
-        path: 'addJob',
+        path: 'job/:id',
+        element: <PrivateRoute>
+                    <JobDetails></JobDetails>
+                 </PrivateRoute>,
+        loader: ({params})=>fetch(`http://localhost:5000/job/${params.id}`)
+      },
+      {
+        path: '/addJob',
         element: <PrivateRoute>
                       <AddAJob></AddAJob>
                  </PrivateRoute>
       },
       {
-        path: 'appliedJobs',
+        path: '/appliedJobs',
         element: <PrivateRoute>
                    <AppliedJobs></AppliedJobs>
                  </PrivateRoute>
@@ -58,6 +67,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
                     <MyJobs></MyJobs>
                  </PrivateRoute>
+      },
+      {
+        path: 'updateJob/:id',
+        element: <UpdateJob></UpdateJob>,
+        loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
       },
       {
         path: '/register',

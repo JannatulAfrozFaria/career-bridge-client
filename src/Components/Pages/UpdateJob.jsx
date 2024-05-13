@@ -1,22 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
-// import Calendar from 'react-calendar';
-// import 'react-calendar/dist/Calendar.css';
-import { AuthContext } from '../AuthProvider/AuthProvider';
-import add from '../../assets/job3.jpg';
+import Swal from 'sweetalert2';
+import update from '../../assets/update.png'
 
-const AddAJob = () => {
-    //Dynamic Title
-    useEffect(()=>{
-        document.title = "Career Bridge | Add a Job"
-    },[])
-
+const UpdateJob = () => {
     const [startDate, setStartDate] = useState(new Date());
-    // const [selectedDate,setSelectedDate] = useState(new Date());
-    const {user} = useContext(AuthContext);
-    const handleAdd = (event) =>{
+
+
+    const dynamicJob = useLoaderData();
+    const {_id,photo, spot, description,country,location,cost,seasonality,time,visitors} = dynamicJob;
+    const handleUpdate = (event) =>{
         event.preventDefault();
         const form = event.target;
         const photo = form.photo.value;
@@ -27,26 +22,24 @@ const AddAJob = () => {
         const range = form.range.value;
         const deadline = form.deadline.value;
         const number = form.number.value;
-        const username = form.username.value;
-        const email = user.email;
-        const newJob = {photo, job, description,category,postdate,range,deadline,number,username,email}
-        console.log(newJob);
+        const updatedJob = {photo, job, description,category,postdate,range,deadline,number}
+        console.log(updatedJob);
 
         //send data to the server 
-        fetch('http://localhost:5000/job',{
-            method: 'POST',
+        fetch(`http://localhost:5000/job/${_id}`,{
+            method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(newJob)
+            body: JSON.stringify(updatedJob)
         })
         .then(res=> res.json())
         .then(data=>{
             console.log(data);
-            if(data.insertedId){
+            if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Success',
-                    text: 'New Job Added Successfully!',
+                    text: 'Job Updated Successfully!',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
@@ -54,18 +47,18 @@ const AddAJob = () => {
         })
     }
     return (
-            <div className="hero bg-base-200 border rounded-3xl w-5/6 mx-auto ">
-                        <div className="card-body w-full rounded-3xl flex flex-col md:flex-row gap-8 shadow-2xl bg-base-100">
+        <div className="hero bg-base-200 border rounded-3xl w-5/6 mx-auto ">
+                        <div className="card-body w-full rounded-3xl flex flex-col md:flex-row gap-0 md:gap-8 shadow-2xl bg-base-100">
                             {/* IMAGE----PORTION */}
                             <div className="w-1/2 md:w-1/3" >
-                                <img className='w-full h-full rounded-3xl' src={add} alt="add a job" />
+                                <img className='w-full h-full rounded-3xl' src={update} alt="add a job" />
                             </div>
                             <div className='w-full md:w-2/3'>
-                                <form onSubmit={handleAdd} className="">
+                                <form onSubmit={handleUpdate} className="">
                                 {/* Title Section */}
                                 <div data-aos="fade-left" data-aos-duration="2000" className="text-left mt-4">
-                                    <h1 className="text-3xl font-bold text-sky-500">Add A New Job!</h1>
-                                    <p className="py-6 text-xl text-gray-400">You can add a new job of any category here!</p>
+                                    <h1 className="text-3xl font-bold text-sky-500">Update Job Details</h1>
+                                    <p className="py-6 text-xl text-gray-400">You can update the job details here!</p>
                                 </div>
                                 {/* ---------FORM---------- */}
                                 <div data-aos="fade-up" data-aos-duration="3000">
@@ -166,14 +159,13 @@ const AddAJob = () => {
                                     </div>
                                     {/* Submit Button */}
                                     <div className="form-control mt-6">
-                                        <input type="submit" value="Add" className="btn basic-btn" />
+                                        <input type="submit" value="Update" className="btn basic-btn" />
                                     </div>
                             </form>
                             </div>
                         </div>
             </div>
-        
     );
 };
 
-export default AddAJob;
+export default UpdateJob;
