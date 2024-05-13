@@ -12,8 +12,6 @@ import ErrorPage from './Components/Pages/ErrorPage.jsx';
 import AuthProvider from './Components/AuthProvider/AuthProvider.jsx';
 import Login from './Components/Pages/Login.jsx';
 import Register from './Components/Pages/Register.jsx';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
 import Blogs from './Components/Pages/Blogs.jsx';
 import MyJobs from './Components/Pages/MyJobs.jsx';
 import AllJobs from './Components/Pages/AllJobs.jsx';
@@ -22,6 +20,9 @@ import AppliedJobs from './Components/Pages/AppliedJobs.jsx';
 import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
 import JobDetails from './Components/Pages/JobDetails.jsx';
 import UpdateJob from './Components/Pages/UpdateJob.jsx';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
 const router = createBrowserRouter([

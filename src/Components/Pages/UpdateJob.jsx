@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
@@ -6,6 +6,11 @@ import Swal from 'sweetalert2';
 import update from '../../assets/update.png'
 
 const UpdateJob = () => {
+    //Dynamic Title
+    useEffect(()=>{
+        document.title = "Career Bridge | Update Job"
+    },[])
+
     const [startDate, setStartDate] = useState(new Date());
 
 
@@ -125,7 +130,7 @@ const UpdateJob = () => {
                                                     <span className="label-text">Application Deadline</span>
                                                 </label>
                                                 {/* <Calendar onChange={(value)=>setSelectedDate(value)} ></Calendar> */}
-                                                <DatePicker className='input input-bordered text-gray-400' name='deadline' required selected={startDate} onChange={(date) => setStartDate(date)} formatDate ="dd/MM/yyyy" />
+                                                <DatePicker className='input input-bordered text-gray-400' name='deadline' required selected={startDate} onChange={(date) => setStartDate(date)} dateFormat ="dd/MM/yyyy" minDate={new Date()} showYearDropdown scrollableMonthYearDropdown />
                                                 {/* <input type="text" placeholder="Job Posting Date"
                                                 name="deadline" className="input input-bordered" required /> */}
                                             </div>

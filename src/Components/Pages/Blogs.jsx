@@ -71,7 +71,14 @@ const Blogs = () => {
                                 <h1 className='text-xl font-bold text-left w-full theme-color mt-6'> Explanation of Code </h1>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000">
-                            <p className='text-left text-gray-400 w-full'>Here is the Answer</p>
+                            <p className='text-justify text-gray-400 w-full'>In this Site, I have implemented Dynamic Title Feature for Every Single Route using the UseEffect Hook of React. The Wesite Icon has been changed by replacing the default href of icon Link in the index.html file. For creating live link of image, postimages.org has been used. For Animation, Lottie React, AOS package, Framer-motion etc have been used in various pages. 
+                            In the "How we Started" Section of Home Page, Framer-Motion has been used to create motion effect.
+                            In this Particular Route, I have used Tailwind and Daisy UI for the Design Portion. I have utilized the grid Layout Property for organizing the answers properly. <br />
+                            For Routing, I have used React Router Dom. I have created a Private Route Component for Controlling the access in certain routes. 
+                            For Deployment of client side, Firebase has been used as the deployment platform. On the other hand, Vercel has been used for deployment of Client Side. 
+                            For Storing Various Data, MongoDB has been used as a server side Database. All the data is being stored in MongoDB and being rendered from specific data collection created in MongoDB when needed. In the BackEnd/Server Side, create, read, update, delete -all of these operations have been executed. The AuthProvider Component has been created to implement the Login and Register Process with Firebase Authentication. 
+                            The Environment Variables have been used to hide the Firebase config data and MongoDB Credentials.
+                              </p>
                         </div>
                 </div>
         </div>
