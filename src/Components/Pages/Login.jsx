@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const Login = () => {
     useEffect(()=>{
@@ -37,8 +38,21 @@ const Login = () => {
 
         logIn(email,password)
             .then(result=>
-                {console.log(result.user)
-                    navigate(location.state? location.state : '/')
+                {  
+                    // console.log(result.user)
+
+                    const loggedInUser = result.user;
+                    console.log(loggedInUser);
+                    const user = {email};
+                    
+                    // navigate(location.state? location.state : '/')
+
+                    //get access token
+                    axios.post('http://localhost:5000/jwt',user)
+                    .then(res=>{
+                        console.log(res.data)
+                    })
+
                     setSuccess('User Created Successfully!')
                     // alert('Logged in Successfully!')
                    Swal.fire({
