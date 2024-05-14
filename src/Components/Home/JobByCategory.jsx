@@ -54,7 +54,7 @@ const JobByCategory = () => {
             <h2 data-aos="fade-left" data-aos-duration="2000" className="text-4xl font-bold my-7 md:my-7 lg:my-10 text-sky-500">Job By Category</h2>
             {/* <h2 data-aos="fade-left" data-aos-duration="3000" className=" sm:text-base lg:text-lg my-5 lg:my-10  text-gray-400">All Categories of Jobs Are Shown Here. </h2> */}
             <div >
-            <Tabs>
+            <Tabs className={ 'text-gray-400 w-5/6 md:w-full mx-auto'}>
                 <TabList>
                     <Tab onClick={()=>handleFilter('')} >All Jobs</Tab>
                     <Tab onClick={()=>handleFilter('On-Site')}>On-Site Jobs</Tab>
@@ -62,7 +62,7 @@ const JobByCategory = () => {
                     <Tab onClick={()=>handleFilter('Hybrid')}>Hybrid Jobs</Tab>
                     <Tab onClick={()=>handleFilter('Part-Time')}>Part Time Jobs</Tab>
                 </TabList>
-                <TabPanel>
+                <TabPanel className={''} >
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
                                 <div key={category._id} className="card bg-base-100 shadow-xl">

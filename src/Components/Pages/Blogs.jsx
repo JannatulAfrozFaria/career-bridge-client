@@ -19,7 +19,7 @@ const Blogs = () => {
                         <div data-aos="fade-up" data-aos-duration="3000">
                                 <div className="text-justify">
                                     <h1 className='text-xl font-bold text-left theme-color'> What is an access token and refresh token? How do they work and where should we store them on the client side?</h1>
-                                    <div className='flex gap-8'>
+                                    <div className='flex-col md:flex-row gap-8'>
                                         <div data-aos="fade-up" data-aos-duration="3000">
                                             <p className='text-left text-gray-400 w-full'><span className='font-bold text-sky-400'>Access Token : <br /> </span>An access token is a credential that represents the authorization granted to the client to access specific resources. It typically has a limited lifespan, often ranging from a few minutes to a few hours.</p>
                                             <p className='text-left text-gray-400 w-full'><span className='font-bold text-sky-400'>Refresh Token : <br /></span>
@@ -38,22 +38,6 @@ const Blogs = () => {
                                     </div>
                                 </div>
                         </div>
-                            {/*     QUESTION NO----------2 */}
-                        {/* <div data-aos="fade-up" data-aos-duration="3000">
-                                <h1 className='text-xl font-bold text-left w-full theme-color mt-6'> What is express js? What is Nest JS ?</h1>
-                        </div> */}
-                        {/* <div data-aos="fade-up" data-aos-duration="3000">
-                            <p className='text-left text-gray-400 w-full'><span className='font-bold text-sky-400'>Express.js </span>
-                             is a minimalist web application framework for Node.js, designed for building web applications and APIs. It provides a robust set of features for web and mobile applications, such as routing, middleware support, templating engines, and more. Express.js is highly flexible and lightweight, making it a popular choice for developers who want to quickly build scalable and efficient server-side applications in JavaScript. <br />
-                             <span className='font-bold text-sky-400'>NestJS</span>, on the other hand, is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It is built on top of Express.js and heavily inspired by Angular, which means it embraces the same architectural concepts such as modules, controllers, services, and dependency injection. NestJS provides a structured and organized approach to building applications, making it easy to manage complex codebases and facilitate team collaboration. It also comes with built-in support for TypeScript, which adds static typing and other advanced features to JavaScript, enhancing developer productivity and code maintainability. Overall, NestJS is suitable for building enterprise-grade applications and APIs with ease.</p>
-                        </div> */}
-                            {/*     QUESTION NO----------3 */}
-                        {/* <div data-aos="fade-up" data-aos-duration="3000">
-                                <h1 className='text-xl font-bold text-left w-full theme-color mt-6'> Explanation of Code </h1>
-                        </div> */}
-                        {/* <div data-aos="fade-up" data-aos-duration="3000">
-                            <p className='text-left text-gray-400 w-full'>Here is the Answer</p>
-                        </div> */}
                 </div>
             </div>
             <div className='grid grid-cols-1 w-5/6 mx-auto'>
