@@ -28,6 +28,7 @@ const Register = () => {
         const name = form.get('name');
         const photo =  form.get('photo');
         const email = form.get('email');
+        const userName = form.get('name');
         const password = form.get('password');
         
         console.log(email,password,name,photo);
@@ -56,7 +57,8 @@ const Register = () => {
         .then(result=>{
             console.log(result.user)
             //new user has been created
-            const user = {email};
+            const createdAt = result?.user?.metadata?.creationTime;
+            const user = {email,userName, createdAt: createdAt};
             //fetch from backend
             fetch('http://localhost:5000/user',{
                 method: 'POST',

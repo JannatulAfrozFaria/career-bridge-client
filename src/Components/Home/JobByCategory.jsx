@@ -9,6 +9,15 @@ const JobByCategory = () => {
     const [filteredCategory,setFilteredCategory] = useState(categories);
 
     const {user} = useContext(AuthContext);
+    //From DataBase/user------
+    const [users,setUsers] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/user')
+        .then (res=>res.json())
+        .then(data=>{
+            setUsers(data);
+        })
+    },[users])
 
     const handleFilter= (category) =>{
         const filteredJobs = categories.filter(item=> {
@@ -59,6 +68,7 @@ const JobByCategory = () => {
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
                                 {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user? user.displayName : category.username} </p> */}
+                                <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {users.userName} </p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -165,8 +175,6 @@ const JobByCategory = () => {
                             )}
                         </div>
                 </TabPanel>
-               
-                
             </Tabs>
             </div>
         </div>
