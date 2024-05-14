@@ -55,8 +55,9 @@ const Register = () => {
         createUser(email,password)
         .then(result=>{
             console.log(result.user)
+            //new user has been created
+            const user = {email};
             setSuccess('User Created Successfully!')
-            // toast('Registration Successful!')
             // alert('Successfully Registered!')
             Swal.fire({
                 title: 'Success',
