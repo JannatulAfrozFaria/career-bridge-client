@@ -39,10 +39,10 @@ const AllJobs = () => {
                     <h3 className="text-2xl md:text-3xl mt-12 text-sky-500 ">Watch Jobs added by People From Around The Globe!</h3>
                     <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">There are about {allJobsData.length} Jobs listed till Now. You can add more! </h2>
                     {/* SEARCH BUTTON */}
-                    <div className="join">
+                    <div className="join ">
                         <div>
                             <div>
-                            <input type="text" value={searchTerm}
+                                <input type="text" value={searchTerm}
                             onChange={handleChange} className="input input-bordered join-item" placeholder="Search"/>
                             </div>
                         </div>
