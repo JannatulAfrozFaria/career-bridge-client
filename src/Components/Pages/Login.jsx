@@ -41,18 +41,23 @@ const Login = () => {
                 {  
                     // console.log(result.user)
 
+                    //code for-----JWT TOKEN------STARTS----here
                     const loggedInUser = result.user;
                     console.log(loggedInUser);
                     const user = {email};
-                    
+
                     // navigate(location.state? location.state : '/')
 
+                    //code for-----JWT TOKEN
                     //get access token
-                    axios.post('http://localhost:5000/jwt',user)
+                    axios.post('https://career-bridge-server.vercel.app/jwt',user,{withCredentials : true})
                     .then(res=>{
                         console.log(res.data)
+                        if(res.data.success){
+                            navigate(location.state? location.state : '/')
+                        }
                     })
-
+                    //jwt code ens-------HERE-------
                     setSuccess('User Created Successfully!')
                     // alert('Logged in Successfully!')
                    Swal.fire({

@@ -1,6 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
+import axios from 'axios';
 
 export const AuthContext = createContext(null);
 
@@ -35,9 +36,30 @@ const AuthProvider = ({children}) => {
     }
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,currentUser =>{
-            console.log(currentUser);
+            
+            //
+            // const userEmail = currentUser?.email || user.email;
+            // const loggedUser =  {email: userEmail};
+            //
+
             setUser(currentUser);
+            console.log(currentUser);
             setLoading(false);
+
+            //if user exists, then issue a token
+            // if(currentUser){
+            //     axios.post('https://career-bridge-server.vercel.app/jwt', loggedUser, {withCredentials: true})
+            //     .then(res=>{
+            //         console.log( 'token response' , res.data);
+            //     })
+            // }
+            // else{
+            //     axios.post('https://career-bridge-server.vercel.app/logout', loggedUser, {withCredentials: true} )
+            //     .then(res=>{
+            //         console.log(res.data);
+            //     })
+            // }
+            //
         });
         return () =>{
             unsubscribe();

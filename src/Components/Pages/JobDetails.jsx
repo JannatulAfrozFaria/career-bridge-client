@@ -18,7 +18,7 @@ const JobDetails = () => {
 
     // const [appliedJobList,setAppliedJobList] = useState([])
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/user`)
+    //     fetch(`https://career-bridge-server.vercel.app/user`)
     //     .then (res=>res.json())
     //     .then(data=>{
     //         setAppliedJobList(data);
@@ -52,7 +52,7 @@ const JobDetails = () => {
         console.log(appliedJob);
 
             //send data to server
-            fetch('http://localhost:5000/appliedJobs',{
+            fetch('https://career-bridge-server.vercel.app/appliedJobs',{
                 method: 'POST',
                 headers: {
                     'content-type': 'applications/json'

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const JobByCategory = () => {
     const [categories,setCategories] = useState(null);
@@ -25,17 +26,29 @@ const JobByCategory = () => {
     }
     console.log(filteredCategory);
 
+    // useEffect(()=>{
+    //     fetch('https://career-bridge-server.vercel.app/job')
+    //     .then(res=>{
+    //         return res.json();
+    //     })
+    //     .then(data=>{
+    //         console.log(data)
+    //         setCategories(data);
+    //         setFilteredCategory(data);
+    //     })
+    // },[])
+
+     //USING AXIOS------//-------FOR----FETCHING----//
+     const url = 'https://career-bridge-server.vercel.app/job';
     useEffect(()=>{
-        fetch('http://localhost:5000/job')
+        axios.get(url,{withCredentials:true})
         .then(res=>{
-            return res.json();
+            setCategories(res.data);
+            setFilteredCategory(res.data);
         })
-        .then(data=>{
-            console.log(data)
-            setCategories(data);
-            setFilteredCategory(data);
-        })
-    },[])
+    },[url])
+
+
     return (
         <div className="text-center w-full md:w-4/5 mx-auto">
             <h2 data-aos="fade-left" data-aos-duration="2000" className="text-4xl font-bold my-7 md:my-7 lg:my-10 text-sky-500">Job By Category</h2>

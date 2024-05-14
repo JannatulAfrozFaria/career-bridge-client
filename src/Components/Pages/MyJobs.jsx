@@ -16,7 +16,7 @@ const MyJobs = () => {
     const [jobs,setJobs] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myJobs/${user?.email}`)
+        fetch(`https://career-bridge-server.vercel.app/myJobs/${user?.email}`)
         .then (res=>res.json())
         .then(data=>{
             setJobs(data);
@@ -36,7 +36,7 @@ const MyJobs = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/job/${_id}`,{
+                fetch(`https://career-bridge-server.vercel.app/job/${_id}`,{
                     method: 'DELETE'
                 })
                 .then(res=>res.json())

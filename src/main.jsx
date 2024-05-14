@@ -54,14 +54,14 @@ const router = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs></AllJobs>,
-        loader: () =>fetch('http://localhost:5000/job')
+        loader: () =>fetch('https://career-bridge-server.vercel.app/job')
       },
       {
         path: 'job/:id',
         element: <PrivateRoute>
                     <JobDetails></JobDetails>
                  </PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/job/${params.id}`)
+        loader: ({params})=>fetch(`https://career-bridge-server.vercel.app/job/${params.id}`)
       },
       {
         path: '/addJob',
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
       {
         path: 'updateJob/:id',
         element: <UpdateJob></UpdateJob>,
-        loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
+        loader: ({params}) => fetch(`https://career-bridge-server.vercel.app/job/${params.id}`)
       },
       {
         path: '/register',

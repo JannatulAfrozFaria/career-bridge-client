@@ -17,7 +17,7 @@ const AppliedJobs = () => {
 
     const [jobs,setJobs] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/myJobs/${user?.email}`)
+        fetch(`https://career-bridge-server.vercel.app/myJobs/${user?.email}`)
         .then (res=>res.json())
         .then(data=>{
             setJobs(data);

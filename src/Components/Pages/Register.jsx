@@ -62,7 +62,7 @@ const Register = () => {
             const appliedJobs = [];
             const user = {email,userName, createdAt: createdAt , postedJobs: postedJobs, appliedJobs: appliedJobs};
             //fetch from backend
-            fetch('http://localhost:5000/user',{
+            fetch('https://career-bridge-server.vercel.app/user',{
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

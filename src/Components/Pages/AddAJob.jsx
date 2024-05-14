@@ -37,7 +37,7 @@ const AddAJob = () => {
         console.log(newJob);
 
         //send data to the server 
-        fetch('http://localhost:5000/job',{
+        fetch('https://career-bridge-server.vercel.app/job',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

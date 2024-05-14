@@ -33,7 +33,7 @@ const UpdateJob = () => {
         console.log(updatedJob);
 
         //send data to the server 
-        fetch(`http://localhost:5000/job/${_id}`,{
+        fetch(`https://career-bridge-server.vercel.app/job/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
