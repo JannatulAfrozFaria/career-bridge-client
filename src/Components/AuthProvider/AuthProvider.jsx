@@ -43,10 +43,11 @@ const AuthProvider = ({children}) => {
             //
 
             setUser(currentUser);
-            console.log(currentUser);
+            // console.log(currentUser);
             setLoading(false);
 
-            //if user exists, then issue a token
+            //
+            // if user exists, then issue a token
             // if(currentUser){
             //     axios.post('https://career-bridge-server.vercel.app/jwt', loggedUser, {withCredentials: true})
             //     .then(res=>{

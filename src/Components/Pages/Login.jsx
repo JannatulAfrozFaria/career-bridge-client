@@ -38,17 +38,11 @@ const Login = () => {
 
         logIn(email,password)
             .then(result=>
-                {  
-                    // console.log(result.user)
-
+                { 
                     //code for-----JWT TOKEN------STARTS----here
                     const loggedInUser = result.user;
                     console.log(loggedInUser);
                     const user = {email};
-
-                    // navigate(location.state? location.state : '/')
-
-                    //code for-----JWT TOKEN
                     //get access token
                     axios.post('https://career-bridge-server.vercel.app/jwt',user,{withCredentials : true})
                     .then(res=>{
@@ -58,6 +52,10 @@ const Login = () => {
                         }
                     })
                     //jwt code ens-------HERE-------
+
+                    
+                    // console.log(result.user)
+                     // navigate(location.state? location.state : '/')
                     setSuccess('User Created Successfully!')
                     // alert('Logged in Successfully!')
                    Swal.fire({

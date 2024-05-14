@@ -112,7 +112,7 @@ const AddAJob = () => {
                                                     <span className="label-text">User Name</span>
                                                 </label>
                                                 <input type="text" placeholder="User Name"
-                                                name="username" className="input input-bordered" required defaultValue={user.displayName} />
+                                                name="username" className="input input-bordered text-gray-400" required defaultValue={user.displayName} />
                                             </div>
                                             {/* USER-----EMAIL */}
                                             <div className="form-control">
@@ -120,7 +120,7 @@ const AddAJob = () => {
                                                     <span className="label-text">Email</span>
                                                 </label>
                                                 <input type="email" placeholder="email"
-                                                name="email" className="input input-bordered" required defaultValue={user.email}/>
+                                                name="email" className="input input-bordered text-gray-400" required defaultValue={user.email}/>
                                             </div>
                                             {/* POSTING DATE----------- */}
                                             <div className="form-control">

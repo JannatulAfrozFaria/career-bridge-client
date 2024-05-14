@@ -11,11 +11,11 @@ const AllJobs = () => {
     },[])
 
     const allJobsData = useLoaderData();
-    
+
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(allJobsData);
 
-    //to load all the Data intially when page is loaded
+    //to load all the Data initially when page is loaded
     useEffect(() => {
         setSearchResults(allJobsData); // Set searchResults to allJobsData when component mounts
       }, []);

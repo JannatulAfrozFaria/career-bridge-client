@@ -26,12 +26,12 @@ const Register = () => {
         // const email = e.target.email.value;
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
-        const photo =  form.get('photo');
+        // const photo =  form.get('photo');
         const email = form.get('email');
         const userName = form.get('name');
         const password = form.get('password');
         
-        console.log(email,password,name,photo);
+        // console.log(email,password,name,photo);
 
         //reset error & success
         setRegisterError('');
@@ -56,6 +56,8 @@ const Register = () => {
         createUser(email,password)
         .then(result=>{
             console.log(result.user)
+
+            //
             //new user has been created
             const createdAt = result?.user?.metadata?.creationTime;
             const postedJobs = [];
@@ -73,6 +75,8 @@ const Register = () => {
             .then(data=>{
                 console.log(data);
             })
+            //
+
             setSuccess('User Created Successfully!')
             // alert('Successfully Registered!')
             Swal.fire({
@@ -130,7 +134,7 @@ const Register = () => {
                                     placeholder="Password" 
                                     className="input input-bordered w-full" 
                                     required />
-                                    <span className='absolute top-4 right-4' onClick={()=> setShowPassword(!showPassword)} >
+                                    <span className='absolute top-4 right-4 text-gray-400' onClick={()=> setShowPassword(!showPassword)} >
                                         {
                                             showPassword? <FaEye></FaEye>
                                                         : <FaEyeSlash></FaEyeSlash>
