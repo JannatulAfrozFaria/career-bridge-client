@@ -62,7 +62,7 @@ const JobByCategory = () => {
                     <Tab onClick={()=>handleFilter('Hybrid')}>Hybrid Jobs</Tab>
                     <Tab onClick={()=>handleFilter('Part-Time')}>Part Time Jobs</Tab>
                 </TabList>
-                <TabPanel className={''} >
+                <TabPanel  >
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
                                 <div key={category._id} className="card bg-base-100 shadow-xl">

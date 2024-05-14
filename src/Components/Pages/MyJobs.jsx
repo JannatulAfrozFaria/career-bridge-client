@@ -64,7 +64,7 @@ const MyJobs = () => {
                     <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">There are about {jobs.length} Jobs listed till Now. You can add more! </h2>
                 </div>
             </div>
-            <div className="flex flex-col md:flex-row ">
+            <div className="flex flex-col-reverse md:flex-row ">
                 {/* the LIST OF ALL SPOTS */}
                 <div data-aos="fade-up" data-aos-duration="3000 w-2/3" >
                     <table className="table">
@@ -130,7 +130,7 @@ const MyJobs = () => {
                         </table>
                 </div>
                  {/* LOTTIE------ */}
-                 <div  className='w-1/3' >
+                 <div  className='w-5/6 md:w-1/3 mx-auto' >
                         <Lottie className='w-full mx-auto' animationData={MyJob} />
                 </div>
             </div>

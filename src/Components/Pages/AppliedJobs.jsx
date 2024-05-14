@@ -33,7 +33,7 @@ const AppliedJobs = () => {
                 <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">Till now you have applied in {jobs.length} Jobs. You can apply to more jobs! </h2>
             </div>
         </div>
-        <div className="flex flex-col md:flex-row ">
+        <div className="flex flex-col-reverse md:flex-row ">
             {/* the LIST OF ALL SPOTS */}
             <div data-aos="fade-up" data-aos-duration="3000 w-2/3" >
                 <table className="table">
@@ -96,7 +96,7 @@ const AppliedJobs = () => {
                     </table>
             </div>
              {/* LOTTIE------ */}
-             <div  className='w-1/3' >
+             <div  className='w-4/5 md:w-1/3 mx-auto' >
                     <Lottie className='w-full mx-auto' animationData={AppliedJob} />
             </div>
         </div>
