@@ -19,6 +19,7 @@ const AddAJob = () => {
     const [applicant,setApplicant] = useState(0);
 
     const {user} = useContext(AuthContext);
+    
     const handleAdd = (event) =>{
         event.preventDefault();
         const form = event.target;

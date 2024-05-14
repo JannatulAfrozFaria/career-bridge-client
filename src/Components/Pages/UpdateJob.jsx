@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 import Swal from 'sweetalert2';
 import update from '../../assets/update.png'
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const UpdateJob = () => {
     //Dynamic Title
@@ -13,6 +14,7 @@ const UpdateJob = () => {
 
     const [startDate, setStartDate] = useState(new Date());
 
+    const {user} = useContext(AuthContext);
 
     const dynamicJob = useLoaderData();
     const {_id,photo, spot, description,country,location,cost,seasonality,time,visitors} = dynamicJob;
@@ -106,7 +108,7 @@ const UpdateJob = () => {
                                                     <span className="label-text">User Name</span>
                                                 </label>
                                                 <input type="text" placeholder="User Name"
-                                                name="username" className="input input-bordered" required />
+                                                name="username" className="input input-bordered" required defaultValue={user.displayName} />
                                             </div>
                                             {/* USER-----EMAIL */}
                                             <div className="form-control">
@@ -114,7 +116,7 @@ const UpdateJob = () => {
                                                     <span className="label-text">Email</span>
                                                 </label>
                                                 <input type="email" placeholder="email"
-                                                name="email" className="input input-bordered" required />
+                                                name="email" className="input input-bordered" required defaultValue={user.email} />
                                             </div>
                                             {/* POSTING DATE----------- */}
                                             <div className="form-control">

@@ -39,7 +39,7 @@ const JobByCategory = () => {
     return (
         <div className="text-center w-full md:w-4/5 mx-auto">
             <h2 data-aos="fade-left" data-aos-duration="2000" className="text-4xl font-bold my-7 md:my-7 lg:my-10 text-sky-500">Job By Category</h2>
-            <h2 data-aos="fade-left" data-aos-duration="3000" className=" sm:text-base lg:text-lg my-5 lg:my-10  text-gray-400">All Categories of Jobs Are Shown Here. </h2>
+            {/* <h2 data-aos="fade-left" data-aos-duration="3000" className=" sm:text-base lg:text-lg my-5 lg:my-10  text-gray-400">All Categories of Jobs Are Shown Here. </h2> */}
             <div >
             <Tabs>
                 <TabList>
@@ -58,11 +58,10 @@ const JobByCategory = () => {
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
                                 <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {category.username} </p>
-                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {users.userName} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
-                                    <p className='my-2 text-left'>Application De<br />adline: {category.deadline} </p>
+                                    <p className='my-2 text-left'>Application Deadline: <br />{category.deadline} </p>
                                     <p className='my-2 text-left'>Job Applicants<br /> Number{category.number} </p>
                                 </div>
                                 <div className="card-actions justify-center w-full">
@@ -81,11 +80,11 @@ const JobByCategory = () => {
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
-                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
+                                <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {category.username} </p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
-                                    <p className='my-2 text-left'>Application De<br />adline: {category.deadline} </p>
+                                    <p className='my-2 text-left'>Application Deadline: <br />{category.deadline} </p>
                                     <p className='my-2 text-left'>Job Applicants<br /> Number{category.number} </p>
                                 </div>
                                 <div className="card-actions justify-center w-full">
@@ -104,11 +103,11 @@ const JobByCategory = () => {
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
-                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
+                                <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {category.username} </p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
-                                    <p className='my-2 text-left'>Application De<br />adline: {category.deadline} </p>
+                                    <p className='my-2 text-left'>Application Deadline: <br />{category.deadline} </p>
                                     <p className='my-2 text-left'>Job Applicants<br /> Number{category.number} </p>
                                 </div>
                                 <div className="card-actions justify-center w-full">
@@ -127,11 +126,11 @@ const JobByCategory = () => {
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
-                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
+                                <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {category.username} </p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
-                                    <p className='my-2 text-left'>Application De<br />adline: {category.deadline} </p>
+                                    <p className='my-2 text-left'>Application Deadline: <br />{category.deadline} </p>
                                     <p className='my-2 text-left'>Job Applicants<br /> Number{category.number} </p>
                                 </div>
                                 <div className="card-actions justify-center w-full">
@@ -150,11 +149,11 @@ const JobByCategory = () => {
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
-                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
+                                <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {category.username} </p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
-                                    <p className='my-2 text-left'>Application De<br />adline: {category.deadline} </p>
+                                    <p className='my-2 text-left'>Application Deadline: <br />{category.deadline} </p>
                                     <p className='my-2 text-left'>Job Applicants<br /> Number{category.number} </p>
                                 </div>
                                 <div className="card-actions justify-center w-full">
@@ -165,6 +164,7 @@ const JobByCategory = () => {
                             )}
                         </div>
                 </TabPanel>
+                
             </Tabs>
             </div>
         </div>

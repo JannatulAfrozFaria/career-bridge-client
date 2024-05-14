@@ -58,7 +58,9 @@ const Register = () => {
             console.log(result.user)
             //new user has been created
             const createdAt = result?.user?.metadata?.creationTime;
-            const user = {email,userName, createdAt: createdAt};
+            const postedJobs = [];
+            const appliedJobs = [];
+            const user = {email,userName, createdAt: createdAt , postedJobs: postedJobs, appliedJobs: appliedJobs};
             //fetch from backend
             fetch('http://localhost:5000/user',{
                 method: 'POST',
