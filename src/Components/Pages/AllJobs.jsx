@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Lottie from "lottie-react";
 // import SoloTrip from "/src/SoloTrip.json";
+
 
 const AllJobs = () => {
     // Dynamic Title
@@ -10,6 +11,12 @@ const AllJobs = () => {
     },[])
 
     const jobs = useLoaderData();
+    const [searchedJobs, setSearchedJobs] = useState(jobs);
+
+    const handleSearch = (e) =>{
+        // const 
+        // setSearchedJobs()
+    }
     return (
         <div>
             <div  className='w-1/3 mx-auto' >
@@ -19,6 +26,25 @@ const AllJobs = () => {
                 <div className='mx-auto w-4/5 text-center'>
                     <h3 className="text-2xl md:text-3xl mt-12 text-sky-500 ">Watch Jobs added by People From Around The Globe!</h3>
                     <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">There are about {jobs.length} Jobs listed till Now. You can add more! </h2>
+                    {/* SEARCH BUTTON */}
+                    <div className="join">
+                        <div>
+                            <div>
+                            <input className="input input-bordered join-item" placeholder="Search"/>
+                            </div>
+                        </div>
+                        {/* <select className="select select-bordered join-item">
+                            <option disabled selected>Filter</option>
+                            <option>Sci-fi</option>
+                            <option>Drama</option>
+                            <option>Action</option>
+                        </select> */}
+                        <div className="indicator">
+                            {/* <span className="indicator-item badge badge-secondary">new</span>  */}
+                            <button onClick={()=>handleSearch(e)} className="btn join-item">Search</button>
+                        </div>
+                    </div>
+                    {/* SEARCH END---- */}
                 </div>
             </div>
             {/* the LIST OF ALL SPOTS */}
@@ -42,7 +68,7 @@ const AllJobs = () => {
                         </thead>
                         <tbody className='text-gray-500'>
                             {
-                                jobs.map(job=>  <tr key={job._id}>
+                                searchedJobs.map(job=>  <tr key={job._id}>
                                     <th  className='hidden md:flex'>
                                         <label>
                                             <input type="checkbox" className="checkbox" />

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const JobByCategory = () => {
     const [categories,setCategories] = useState(null);
     const [filteredCategory,setFilteredCategory] = useState(categories);
+
+    const {user} = useContext(AuthContext);
 
     const handleFilter= (category) =>{
         const filteredJobs = categories.filter(item=> {
@@ -50,11 +53,12 @@ const JobByCategory = () => {
                 <TabPanel>
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
-                                <div key={category._id} className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={category.photo} alt="Category" /></figure>
+                                <div key={category._id} className="card bg-base-100 shadow-xl">
+                                    <figure><img src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
-                                <p className=' text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user? user.displayName : category.username} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -72,11 +76,12 @@ const JobByCategory = () => {
                 <TabPanel>
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
-                                <div key={category._id} className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={category.photo} alt="Category" /></figure>
+                                <div key={category._id} className="card bg-base-100 shadow-xl">
+                                    <figure><img src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
-                                <p className=' text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -94,11 +99,12 @@ const JobByCategory = () => {
                 <TabPanel>
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
-                                <div key={category._id} className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={category.photo} alt="Category" /></figure>
+                                <div key={category._id} className="card bg-base-100 shadow-xl">
+                                    <figure><img src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
-                                <p className=' text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -116,11 +122,12 @@ const JobByCategory = () => {
                 <TabPanel>
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
-                                <div key={category._id} className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={category.photo} alt="Category" /></figure>
+                                <div key={category._id} className="card bg-base-100 shadow-xl">
+                                    <figure><img src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
-                                <p className=' text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -138,11 +145,12 @@ const JobByCategory = () => {
                 <TabPanel>
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.map(category=>
-                                <div key={category._id} className="card w-96 bg-base-100 shadow-xl">
-                                <figure><img src={category.photo} alt="Category" /></figure>
+                                <div key={category._id} className="card bg-base-100 shadow-xl">
+                                    <figure><img src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
-                                <p className=' text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
+                                {/* <p className=' text-left text-xl text-gray-400 font-bold'>Posted By: {user.displayName} </p> */}
                                 <div className='grid grid-cols-1 md:grid-cols-2 text-gray-400 font-bold'>
                                     <p className='my-2 text-left'>Salary Range: <br />{category.range} </p>
                                     <p className='my-2 text-left'>Job Posting Date: <br />te: {category.postdate} </p>
@@ -157,6 +165,7 @@ const JobByCategory = () => {
                             )}
                         </div>
                 </TabPanel>
+               
                 
             </Tabs>
             </div>

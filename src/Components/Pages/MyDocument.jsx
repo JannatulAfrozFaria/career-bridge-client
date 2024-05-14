@@ -5,7 +5,7 @@ const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text>Your Job Application Is Successful! Wish You Good Luck! </Text>
+        <Text>Your Job Application Is Successful! Thanks For Your Interest! We will contact you soon. Wish You Good Luck! </Text>
       </View>
     </Page>
   </Document>
