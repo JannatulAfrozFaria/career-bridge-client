@@ -21,6 +21,18 @@ import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
 import JobDetails from './Components/Pages/JobDetails.jsx';
 import UpdateJob from './Components/Pages/UpdateJob.jsx';
 
+//Tanstack Query
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+// Create a client
+const queryClient = new QueryClient()
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..

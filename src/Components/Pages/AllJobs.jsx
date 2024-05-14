@@ -10,27 +10,40 @@ const AllJobs = () => {
         document.title = "Career Bridge | All Jobs"
     },[])
 
-    const jobs = useLoaderData();
-    const [searchedJobs, setSearchedJobs] = useState(jobs);
+    const allJobsData = useLoaderData();
+    
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState(allJobsData);
 
-    const handleSearch = (e) =>{
-        // const 
-        // setSearchedJobs()
+    //to load all the Data intially when page is loaded
+    useEffect(() => {
+        setSearchResults(allJobsData); // Set searchResults to allJobsData when component mounts
+      }, []);
+
+    const handleSearch = () =>{
+        const results = allJobsData.filter(singleJob=>
+            singleJob.job.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setSearchResults(results);
+    };
+    const handleChange = event =>{
+        setSearchTerm(event.target.value);
     }
     return (
         <div>
             <div  className='w-1/3 mx-auto' >
                     {/* <Lottie className='w-2/3 mx-auto' animationData={SoloTrip} /> */}
             </div>
-            <div>
+            <div data-aos="fade-right" data-aos-duration="2000">
                 <div className='mx-auto w-4/5 text-center'>
                     <h3 className="text-2xl md:text-3xl mt-12 text-sky-500 ">Watch Jobs added by People From Around The Globe!</h3>
-                    <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">There are about {jobs.length} Jobs listed till Now. You can add more! </h2>
+                    <h2 className="text-base md:text-xl text-gray-500 mt-4 mb-8">There are about {allJobsData.length} Jobs listed till Now. You can add more! </h2>
                     {/* SEARCH BUTTON */}
                     <div className="join">
                         <div>
                             <div>
-                            <input className="input input-bordered join-item" placeholder="Search"/>
+                            <input type="text" value={searchTerm}
+                            onChange={handleChange} className="input input-bordered join-item" placeholder="Search"/>
                             </div>
                         </div>
                         {/* <select className="select select-bordered join-item">
@@ -41,7 +54,7 @@ const AllJobs = () => {
                         </select> */}
                         <div className="indicator">
                             {/* <span className="indicator-item badge badge-secondary">new</span>  */}
-                            <button onClick={()=>handleSearch(e)} className="btn join-item">Search</button>
+                            <button onClick={handleSearch} className="btn join-item basic-btn">Search</button>
                         </div>
                     </div>
                     {/* SEARCH END---- */}
@@ -68,7 +81,7 @@ const AllJobs = () => {
                         </thead>
                         <tbody className='text-gray-500'>
                             {
-                                searchedJobs.map(job=>  <tr key={job._id}>
+                                searchResults.map(job=>  <tr key={job._id}>
                                     <th  className='hidden md:flex'>
                                         <label>
                                             <input type="checkbox" className="checkbox" />

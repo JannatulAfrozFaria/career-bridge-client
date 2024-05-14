@@ -3,7 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
-import MyJob from "../../../src/myjobs.json";
+import MyJob from "../../../src/MyJobsAnimate.json";
 
 const MyJobs = () => {
     //Dynamic Title
@@ -58,9 +58,6 @@ const MyJobs = () => {
 
     return (
         <div className='mx-auto w-5/6'>
-            {/* <div  className='w-1/3 mx-auto' >
-                    <Lottie className='w-2/3 mx-auto' animationData={MyJob} />
-            </div> */}
             <div>
                 <div className='text-left'>
                     <h3 className="text-2xl md:text-3xl mt-12 text-sky-500  ">Watch Jobs added by You!</h3>

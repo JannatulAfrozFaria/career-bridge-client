@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Lottie from "lottie-react";
-import MyJob from "../../../src/myjobs.json";
+import AppliedJob from "../../../src/AppliedJobs.json";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
@@ -23,11 +23,10 @@ const AppliedJobs = () => {
             setJobs(data);
         })
     },[user])
+
+    
     return (
         <div className='mx-auto w-5/6'>
-        {/* <div  className='w-1/3 mx-auto' >
-                <Lottie className='w-2/3 mx-auto' animationData={MyJob} />
-        </div> */}
         <div>
             <div className='text-left'>
                 <h3 className="text-2xl md:text-3xl mt-12 text-sky-500  ">Watch Jobs You have Applied on!</h3>
@@ -98,7 +97,7 @@ const AppliedJobs = () => {
             </div>
              {/* LOTTIE------ */}
              <div  className='w-1/3' >
-                    <Lottie className='w-full mx-auto' animationData={MyJob} />
+                    <Lottie className='w-full mx-auto' animationData={AppliedJob} />
             </div>
         </div>
         {/* --------PDF------- */}

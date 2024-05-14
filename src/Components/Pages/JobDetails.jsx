@@ -14,9 +14,20 @@ const JobDetails = () => {
     const {photo, job, category, deadline, description,range,number} = singleJob;
 
     const {user} = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
+
+    // const [appliedJobList,setAppliedJobList] = useState([])
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/user`)
+    //     .then (res=>res.json())
+    //     .then(data=>{
+    //         setAppliedJobList(data);
+    //     })
+    // },[])
 
     const handleApply =()=>{
+        // const newAppliedList = [];
+        // appliedJobList.push(newAppliedList);
         if ( new Date() < new Date(deadline)){
             setShowModal(true);
             document.getElementById('my_modal_1').showModal()
