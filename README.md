@@ -1,8 +1,72 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Career Bridge
 
-Currently, two official plugins are available:
+Unlock your potential. Find your dream job. Your journey starts here. Join our community of opportunity seekers today.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Site URL
+
+  https://career-bridge-a6961.web.app/addJob
+
+## Features of Tourista
+
+- Personalized Job Matching: Advanced algorithms match users with tailored job listings based on skills, experience, and preferences.
+- Comprehensive Job Listings: Extensive database featuring diverse opportunities from various industries and locations.
+- User-friendly Interface: Intuitive design for effortless navigation and efficient job searching.
+- Networking Opportunities: Connect with industry professionals, mentors, and potential employers for networking and career advancement.
+- Application Tracking System: Keep track of job applications, interviews, and follow-ups in one centralized dashboard.
+- Employer Reviews: Insights from current and former employees to help users evaluate companies and make informed career choices.
+- Mobile Accessibility: Seamless access on mobile devices, enabling job searching and networking on-the-go.
+
+## Selected Category
+-Assignment_category_0003
+
+## npm package used for challenge task
+
+ - [Framer Motion](https://www.npmjs.com/package/framer-motion)
+ - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/quick-start)
+- [JWT](https://jwt.io/)
+- [Lottie React](https://www.npmjs.com/package/lottie-react)
+## Authors
+
+- [@JannatulAfrozFaria](https://github.com/JannatulAfrozFaria)
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/programming-hero-web-course-4/b9a9-real-estate-JannatulAfrozFaria
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Support
+
+For support, email archetypedesigners@gmail.com or join our Slack channel.
+
+
+## Acknowledgements
+
+ - [Tailwind CSS](https://tailwindcss.com/)
+ - [Daisy UI](https://daisyui.com/)
+ - [React Router](https://reactrouter.com/en/main)
+  - [Fire Base](https://console.firebase.google.com/)
+
