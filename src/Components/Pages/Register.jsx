@@ -57,6 +57,18 @@ const Register = () => {
             console.log(result.user)
             //new user has been created
             const user = {email};
+            //fetch from backend
+            fetch('http://localhost:5000/user',{
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+            })
             setSuccess('User Created Successfully!')
             // alert('Successfully Registered!')
             Swal.fire({
