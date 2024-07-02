@@ -17,7 +17,7 @@ const AllJobs = () => {
 
     //to load all the Data initially when page is loaded
     useEffect(() => {
-        setSearchResults(allJobsData); // Set searchResults to allJobsData when component mounts
+        setSearchResults(allJobsData); 
       }, []);
 
     const handleSearch = () =>{
@@ -46,21 +46,14 @@ const AllJobs = () => {
                             onChange={handleChange} className="input input-bordered join-item" placeholder="Search"/>
                             </div>
                         </div>
-                        {/* <select className="select select-bordered join-item">
-                            <option disabled selected>Filter</option>
-                            <option>Sci-fi</option>
-                            <option>Drama</option>
-                            <option>Action</option>
-                        </select> */}
                         <div className="indicator">
-                            {/* <span className="indicator-item badge badge-secondary">new</span>  */}
                             <button onClick={handleSearch} className="btn join-item basic-btn">Search</button>
                         </div>
                     </div>
                     {/* SEARCH END---- */}
                 </div>
             </div>
-            {/* the LIST OF ALL SPOTS */}
+            {/* the LIST OF ALL JOBS */}
             <div data-aos="fade-up" data-aos-duration="3000" className='mx-auto w-5/6' >
                 <table className="table">
                         <thead className='mx-0 text-center'>

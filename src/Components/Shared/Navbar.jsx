@@ -15,7 +15,6 @@ const Navbar = () => {
     // const[spots,setSpots] = useState(loadedSpots);
 
     const {user,logOut} = useContext(AuthContext);
-    console.log(user);
 
 
     //state for changing theme

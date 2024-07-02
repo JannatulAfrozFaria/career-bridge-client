@@ -54,14 +54,14 @@ const router = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs></AllJobs>,
-        loader: () =>fetch('https://career-bridge-server.vercel.app/job')
+        loader: () =>fetch(`${import.meta.env.VITE_API_URL}/job`)
       },
       {
         path: 'job/:id',
         element: <PrivateRoute>
                     <JobDetails></JobDetails>
                  </PrivateRoute>,
-        loader: ({params})=>fetch(`https://career-bridge-server.vercel.app/job/${params.id}`)
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`)
       },
       {
         path: '/addJob',
@@ -73,7 +73,8 @@ const router = createBrowserRouter([
         path: '/appliedJobs',
         element: <PrivateRoute>
                    <AppliedJobs></AppliedJobs>
-                 </PrivateRoute>
+                 </PrivateRoute>,
+        //  loader: () =>fetch(`${import.meta.env.VITE_API_URL}/appliedJobs`)      
       },
       {
         path: '/myJobs',
@@ -84,7 +85,7 @@ const router = createBrowserRouter([
       {
         path: 'updateJob/:id',
         element: <UpdateJob></UpdateJob>,
-        loader: ({params}) => fetch(`https://career-bridge-server.vercel.app/job/${params.id}`)
+        loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`)
       },
       {
         path: '/register',

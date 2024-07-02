@@ -1,5 +1,5 @@
 
-# Career Bridge
+# Career Bridge | Overview
 
 Unlock your potential. Find your dream job. Your journey starts here. Join our community of opportunity seekers today.
 
@@ -7,7 +7,7 @@ Unlock your potential. Find your dream job. Your journey starts here. Join our c
 
   https://career-bridge-a6961.web.app/addJob
 
-## Features of Tourista
+## Features of Career Bridge
 
 - Personalized Job Matching: Advanced algorithms match users with tailored job listings based on skills, experience, and preferences.
 - Comprehensive Job Listings: Extensive database featuring diverse opportunities from various industries and locations.
@@ -17,10 +17,8 @@ Unlock your potential. Find your dream job. Your journey starts here. Join our c
 - Employer Reviews: Insights from current and former employees to help users evaluate companies and make informed career choices.
 - Mobile Accessibility: Seamless access on mobile devices, enabling job searching and networking on-the-go.
 
-## Selected Category
--Assignment_category_0003
 
-## npm package used for challenge task
+## npm package used for various task
 
  - [Framer Motion](https://www.npmjs.com/package/framer-motion)
  - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/quick-start)
@@ -60,13 +58,14 @@ Start the server
 
 ## Support
 
-For support, email archetypedesigners@gmail.com or join our Slack channel.
+For support, email afroz_faria03@yahoo.com or join our Slack channel.
 
 
-## Acknowledgements
+## Technologies Used
 
  - [Tailwind CSS](https://tailwindcss.com/)
  - [Daisy UI](https://daisyui.com/)
  - [React Router](https://reactrouter.com/en/main)
-  - [Fire Base](https://console.firebase.google.com/)
+ - [Fire Base](https://console.firebase.google.com/)
+ - [MongoDB](https://www.mongodb.com/)
 

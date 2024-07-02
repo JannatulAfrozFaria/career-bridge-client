@@ -64,7 +64,7 @@ const Register = () => {
             const appliedJobs = [];
             const user = {email,userName, createdAt: createdAt , postedJobs: postedJobs, appliedJobs: appliedJobs};
             //fetch from backend
-            fetch('https://career-bridge-server.vercel.app/user',{
+            fetch(`${import.meta.env.VITE_API_URL}/user`,{
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'
@@ -163,7 +163,7 @@ const Register = () => {
                                 </div>
                             }
                     </div>
-                    <p className='text-center mt-4 animate__animated animate__fadeInUp animate__animated animate__bounce animate__delay-2s '>Already have an Account?  
+                    <p className='text-center text-gray-400 mt-4 animate__animated animate__fadeInUp animate__animated animate__bounce animate__delay-2s '>Already have an Account?  
                     <Link  className='text-cyan-500 font-bold ml-4' to="/login" >Login</Link>
                     </p>          
             </div>

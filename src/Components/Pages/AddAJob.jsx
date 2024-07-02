@@ -37,7 +37,7 @@ const AddAJob = () => {
         console.log(newJob);
 
         //send data to the server 
-        fetch('https://career-bridge-server.vercel.app/job',{
+        fetch(`${import.meta.env.VITE_API_URL}/job`,{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

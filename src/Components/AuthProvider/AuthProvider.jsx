@@ -49,13 +49,13 @@ const AuthProvider = ({children}) => {
             //
             // if user exists, then issue a token
             // if(currentUser){
-            //     axios.post('https://career-bridge-server.vercel.app/jwt', loggedUser, {withCredentials: true})
+            //     axios.post('${import.meta.env.VITE_API_URL}/jwt', loggedUser, {withCredentials: true})
             //     .then(res=>{
             //         console.log( 'token response' , res.data);
             //     })
             // }
             // else{
-            //     axios.post('https://career-bridge-server.vercel.app/logout', loggedUser, {withCredentials: true} )
+            //     axios.post('${import.meta.env.VITE_API_URL}/logout', loggedUser, {withCredentials: true} )
             //     .then(res=>{
             //         console.log(res.data);
             //     })

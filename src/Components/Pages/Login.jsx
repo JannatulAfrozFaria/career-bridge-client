@@ -44,7 +44,7 @@ const Login = () => {
                     console.log(loggedInUser);
                     const user = {email};
                     //get access token
-                    axios.post('https://career-bridge-server.vercel.app/jwt',user,{withCredentials : true})
+                    axios.post('${import.meta.env.VITE_API_URL}/jwt',user,{withCredentials : true})
                     .then(res=>{
                         console.log(res.data)
                         if(res.data.success){
@@ -142,7 +142,7 @@ const Login = () => {
                                 </div>
                             }
                     </div>
-                    <p className='text-left mt-4 animate__animated animate__flash animate__animated animate__backInUp animate__delay-1s '> Do not have an Account?  <Link  className='text-cyan-500 font-bold' to="/register" >Register</Link>  </p>
+                    <p className='text-left text-gray-400 mt-4 animate__animated animate__flash animate__animated animate__backInUp animate__delay-1s '> Do not have an Account?  <Link  className='text-cyan-500 font-bold' to="/register" >Register</Link>  </p>
                     <div className='animate__animated animate__flash animate__animated animate__fadeInUp animate__delay-2s grid grid-cols-2 w-full md:w-3/4'>
                         <p className='text-left theme-light'><button onClick={handleGoogleSignIn}  className='btn btn-ghost' > <FaGoogle></FaGoogle> Log in With Google</button></p>          
                         <p className='text-left theme-light'><button onClick={handleGitHubSignIn}  className='btn btn-ghost' > <FaGithub></FaGithub> Log in With GitHub</button></p>    

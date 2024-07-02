@@ -30,12 +30,12 @@ const UpdateJob = () => {
         const postdate = form.postdate.value;
         const range = form.range.value;
         const deadline = form.deadline.value;
-        const number = form.number.value;
-        const updatedJob = {photo, job, description,category,postdate,range,deadline,number}
+        // const number = form.number.value;
+        const updatedJob = {photo, job, description,category,postdate,range,deadline}
         console.log(updatedJob);
 
         //send data to the server 
-        fetch(`https://career-bridge-server.vercel.app/job/${_id}`,{
+        fetch(`${import.meta.env.VITE_API_URL}/job/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

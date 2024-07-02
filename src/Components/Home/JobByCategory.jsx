@@ -27,7 +27,7 @@ const JobByCategory = () => {
     console.log(filteredCategory);
 
     // useEffect(()=>{
-    //     fetch('https://career-bridge-server.vercel.app/job')
+    //     fetch(`${import.meta.env.VITE_API_URL}/job`)
     //     .then(res=>{
     //         return res.json();
     //     })
@@ -39,7 +39,7 @@ const JobByCategory = () => {
     // },[])
 
      //USING AXIOS------//-------FOR----FETCHING----//
-     const url = 'https://career-bridge-server.vercel.app/job';
+     const url = `${import.meta.env.VITE_API_URL}/job`;
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
         .then(res=>{
