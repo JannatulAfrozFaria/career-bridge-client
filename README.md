@@ -18,7 +18,7 @@ Unlock your potential. Find your dream job. Your journey starts here. Join our c
 - Mobile Accessibility: Seamless access on mobile devices, enabling job searching and networking on-the-go.
 
 
-## npm package used for various task
+## npm package explored in this project
 
  - [Framer Motion](https://www.npmjs.com/package/framer-motion)
  - [TanStack Query](https://tanstack.com/query/v4/docs/framework/react/quick-start)
