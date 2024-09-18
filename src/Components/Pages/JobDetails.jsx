@@ -77,6 +77,7 @@ const JobDetails = () => {
                 </div>
                 <div className='my-4'>
                     <p className='theme-light font-medium text-base'> <span className='font-semibold text-gray-500'>Salary Range:</span> {range} </p>
+                    <p className='theme-light font-medium text-base' > <span className='font-semibold text-gray-500'>Posted on :</span> {postdate} </p>
                     <p className='theme-light font-medium text-base' > <span className='font-semibold text-gray-500'>Deadline :</span> {deadline} </p>
                     <p className='theme-light font-medium text-base' > <span className='font-semibold text-gray-500'>Posted By :</span> {username} </p>
                 </div>
