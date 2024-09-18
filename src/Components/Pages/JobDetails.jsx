@@ -11,7 +11,7 @@ const JobDetails = () => {
     },[])
 
     const singleJob = useLoaderData();
-    const {photo, job, deadline, description,range,number,category,username} = singleJob;
+    const {photo, job, deadline,postdate, description,range,number,category,username} = singleJob;
 
     const {user} = useContext(AuthContext);
 
