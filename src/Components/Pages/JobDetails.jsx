@@ -64,12 +64,12 @@ const JobDetails = () => {
    
     
     return (
-        <div className='min-h-screen w-4/5 md:w-3/4 text-center mx-auto bg-gradient-to-b from-sky-200 via-white to-sky-500 '>
-            <h2 data-aos="fade-down" data-aos-duration="2000"  className='text-xl md:text-2xl lg:text-3xl font-bold theme-light'>Job Title : {job} </h2>
+        <div className='w-4/5 md:w-full text-center p-20 mx-auto bg-gradient-to-b from-sky-300 via-white to-sky-500 '>
+            <h2 data-aos="fade-down" data-aos-duration="2000"  className='text-xl md:text-2xl lg:text-3xl font-bold theme-light pt-20'>Job Title : {job} </h2>
             <div data-aos="fade-right" data-aos-duration="3000"  className='text-center my-5 mx-auto w-full'>
-                <img  className=' w-3/5 h-[300px] mx-auto rounded-3xl ' src={photo} alt="" />
+                <img  className=' w-1/3 h-[300] md:h-[440px] mx-auto rounded-3xl ' src={photo} alt="" />
             </div>
-            <div data-aos="fade-right" data-aos-duration="3000" className='w-3/5 mx-auto text-gray-500 text-base md:text-xl text-left grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <div data-aos="fade-right" data-aos-duration="3000" className='w-1/3 mx-auto text-gray-500 text-base md:text-xl text-left grid grid-cols-1 md:grid-cols-2 gap-6'>
                 <div data-aos="fade-left" data-aos-duration="2000" className=' text-gray-500 text-base text-left'> 
                         <h2 className='font-semibold'>Description: </h2>
                         <p className='text-justify'>{description} </p>
