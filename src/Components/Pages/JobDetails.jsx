@@ -64,7 +64,7 @@ const JobDetails = () => {
    
     
     return (
-        <div className='w-4/5 md:w-full text-center p-20 mx-auto bg-gradient-to-b from-sky-300 via-white to-sky-500 '>
+        <div className='w-4/5 md:w-full text-center p-20 mx-auto '>
             <h2 data-aos="fade-down" data-aos-duration="2000"  className='text-xl md:text-2xl lg:text-3xl font-bold theme-light pt-20'>Job Title : {job} </h2>
             <div data-aos="fade-right" data-aos-duration="3000"  className='text-center my-5 mx-auto w-full'>
                 <img  className=' w-1/3 h-[300] md:h-[440px] mx-auto rounded-3xl ' src={photo} alt="" />
@@ -88,7 +88,7 @@ const JobDetails = () => {
 
                     {/*---------MODAL----------MODAL------------MODAL------- */}
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button  onClick={handleApply} data-aos="fade-left" data-aos-duration="3000" className='btn basic-btn mt-6 w-3/5'>Apply</button>
+            <button  onClick={handleApply} data-aos="fade-left" data-aos-duration="3000" className='btn basic-btn mt-6 w-1/3'>Apply</button>
              <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                      <form  onSubmit={handleSubmit}>
