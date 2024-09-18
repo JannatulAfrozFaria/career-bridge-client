@@ -64,7 +64,7 @@ const JobDetails = () => {
    
     
     return (
-        <div className='min-h-screen w-4/5 md:w-3/4 text-center mx-auto'>
+        <div className='min-h-screen w-4/5 md:w-3/4 text-center mx-auto my-20'>
             <h2 data-aos="fade-down" data-aos-duration="2000"  className='text-xl md:text-2xl lg:text-3xl font-bold theme-light'>Job Title : {job} </h2>
             <div data-aos="fade-right" data-aos-duration="3000"  className='text-center my-5 mx-auto w-full'>
                 <img  className=' w-3/5 h-[300px] mx-auto rounded-3xl ' src={photo} alt="" />
