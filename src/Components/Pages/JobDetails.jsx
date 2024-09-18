@@ -69,7 +69,7 @@ const JobDetails = () => {
             <div data-aos="fade-right" data-aos-duration="3000"  className='text-center my-5 mx-auto w-full'>
                 <img  className=' w-3/5 h-[300px] mx-auto rounded-3xl ' src={photo} alt="" />
             </div>
-            <div data-aos="fade-right" data-aos-duration="3000" className=' w-3/5  text-gray-500 text-base md:text-xl text-left grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <div data-aos="fade-right" data-aos-duration="3000" className='w-3/5 mx-auto text-gray-500 text-base md:text-xl text-left grid grid-cols-1 md:grid-cols-2 gap-6'>
                 <div data-aos="fade-left" data-aos-duration="2000" className=' text-gray-500 text-base text-left'> 
                         <h2 className='font-semibold'>Description: </h2>
                         <p className='text-justify'>{description} </p>
