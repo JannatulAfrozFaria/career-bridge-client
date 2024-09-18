@@ -66,7 +66,7 @@ const JobByCategory = () => {
                         <div data-aos="fade-up" data-aos-duration="3000" className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-16'>
                             {filteredCategory && filteredCategory.slice(0,9).map(category=>
                                 <div key={category._id} className="card bg-base-100 shadow-xl">
-                                    <figure><img className='w-full h-[480px]' src={category.photo} alt="Category" /></figure>
+                                    <figure><img className='w-full h-[240px] md:h-[480px]' src={category.photo} alt="Category" /></figure>
                                 <div className="card-body">
                                 <h2 className="card-title theme-color mt-4 md:mt-0 text-3xl">{category.job} </h2>
                                 <p className='mt-6 text-left text-xl text-gray-400 font-bold'>Category: {category.category} </p>
